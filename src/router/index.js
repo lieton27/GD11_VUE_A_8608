@@ -16,7 +16,13 @@ const routes = [
         name: 'UserController',
         path: '',
         component: loadView('userController')
-    }]
+        },
+        {
+        name: 'sparepartsController',
+        path: '/sparepartsController',
+        component: loadView('sparepartsController')
+        }
+    ]
 }, 
 ] 
 Vue.use(Router)

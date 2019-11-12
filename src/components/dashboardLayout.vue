@@ -36,7 +36,7 @@
         </v-app-bar>
 
         <VContent>
-            <router-view />
+            <router-view></router-view>
         </VContent>
     </div>
 </template>
@@ -49,7 +49,12 @@
                 items: [{
                     title: 'User Controller',
                     icon: 'mdi-human-male'
-                }, ],
+                }, 
+                {
+                    title: 'Spareparts Controller',
+                    icon: 'mdi-anchor',
+                    route: "/sparepartsController"
+                }],
             }
         },
     }

@@ -2,12 +2,12 @@
     <v-container>
         <v-card>
             <v-container grid-list-md mb-0>
-                <h2 class="text-md-center">Data User</h2>
+                <h2 class="text-md-center">Data Spareparts</h2>
                 <v-layout row wrap style="margin:10px">
                     <v-flex xs6>
                         <v-btn depressed dark rounded style="text-transform: none !important;" color="green accent-3"
                             @click="dialog = true">
-                            <v-icon size="18" class="mr-2">mdi-pencil-plus</v-icon> Tambah User
+                            <v-icon size="18" class="mr-2">mdi-pencil-plus</v-icon> Tambah Spareparts
                         </v-btn>
                     </v-flex>
                     <v-flex xs6 class="text-right">
@@ -16,14 +16,16 @@
                     </v-flex>
                 </v-layout>
 
-                <v-data-table :headers="headers" :items="users" :search="keyword" :loading="load"> <template
+                <v-data-table :headers="headers" :items="spareparts" :search="keyword" :loading="load"> <template
                         v-slot:body="{ items }">
                         <tbody>
                             <tr v-for="(item,index) in items" :key="item.id">
                                 <td>{{ index + 1 }}</td>
                                 <td>{{ item.name }}</td>
-                                <td>{{ item.email}}</td>
-                                <td>{{ item.password }}</td>
+                                <td>{{ item.merk}}</td>
+                                <td>{{ item.brand }}</td>
+                                <td>{{ item.amount }}</td>
+                                <td>{{ item.created_at }}</td>
                                 <td class="text-center">
                                     <v-btn icon color="indigo" light @click="editHandler(item)">
                                         <v-icon>mdi-pencil</v-icon>
@@ -39,7 +41,7 @@
         </v-card>
         <v-dialog v-model="dialog" persistent max-width="600px">
             <v-card>
-                <v-card-title> <span class="headline">User Profile</span> </v-card-title>
+                <v-card-title> <span class="headline">Spareparts</span> </v-card-title>
                 <v-card-text>
                     <v-container>
                         <v-row>
